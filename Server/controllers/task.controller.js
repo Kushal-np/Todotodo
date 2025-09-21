@@ -1,4 +1,4 @@
-import { Task } from "../model/task.model";
+import { Task } from "../model/task.model.js";
 
 export const createTask = async (req, res) => {
   try {
@@ -9,7 +9,7 @@ export const createTask = async (req, res) => {
         message: "title is required",
       });
     }
-    const task = Task.create({ title });
+    const task = await Task.create({ title , description });
     res.status(201).json({
       success: true,
       task,
@@ -61,6 +61,7 @@ export const updateTask = async (req, res) => {
 
 export const deleteTask = async (req, res) => {
   try {
+    console.log("here we come")
     const { id } = req.params;
     const deletedTask = await Task.findByIdAndDelete(id);
     if (!deletedTask) {
