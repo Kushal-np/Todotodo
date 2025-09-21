@@ -25,7 +25,10 @@ export const createTask = async (req, res) => {
 export const readTask = async (req, res) => {
   try {
     const task = await Task.find();
-    res.status(201).json(task);
+    res.status(201).json({
+      success:true , 
+      tasks:task,
+    });
   } catch (error) {
     res.status(501).json({
       success: false,
