@@ -1,7 +1,7 @@
 const Navbar = ()=>{
     return (
         <div>
-            <div className="w-auto h-15vh bg-blue-400 border-2 border-solid p-3 flex flex-row justify-center items-center">
+            <div className="w-auto h-15vh bg-blue-400 border-2 border-solid p-3 flex flex-row justify-around items-center">
                 <div className="text-4xl font-bold text-white border-2 border-solid border-black p-2">
                 Todo App
                 </div>

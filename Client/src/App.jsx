@@ -1,8 +1,14 @@
-import {BrowserRouter as Router , Routes , Route} from "react-router-dom"
-const App = () =>{
+import { Routes, Route } from "react-router-dom"
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+
+const App = () => {
   return (
     <div>
-
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
     </div>
   )
 }
